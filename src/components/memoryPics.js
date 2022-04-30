@@ -22,9 +22,49 @@ import {
     DiBower,
     DiYeoman,
     DiYii,
- } from "react-icons/di";
+} from "react-icons/di";
+    
+ 
 
- const iconSize = 40
+
+import { 
+    DiAsterisk,
+    DiAptana,
+    DiBackbone,
+    DiBugsense,
+    DiCoffeescript,
+    DiGithubAlt,
+    DiGo,
+    DiGulp,
+    DiEnvato,
+    DiIonic,
+    DiGnu,
+    DiJira,
+    DiGrunt,
+    DiIllustrator,
+    DiJoomla,
+    DiLaravel,
+    DiNetbeans,
+    DiNancy,
+    DiRedhat,
+    DiRuby,
+    DiProlog,
+    DiPython,
+    DiRasberryPi,
+    DiSenchatouch,
+    DiMsqlServer,
+    DiMozilla,
+    DiModernizr,
+    DiMongodb,
+    DiDocker,
+    DiDart,
+    DiCelluloid,
+    DiCloud9,
+    DiDlang,
+    DiDigitalOcean,
+} from "react-icons/di";
+
+ const iconSize = 30
 let data = [
     <AiFillBug size={iconSize}/>,
     <AiFillAndroid size={iconSize}/>,
@@ -46,7 +86,40 @@ let data = [
     <DiYii size={iconSize}/>,
     <AiFillRest size={iconSize}/>,
     <AiFillPushpin size={iconSize}/>,
-
+    <DiAsterisk size={iconSize}/>,
+    <DiAptana size={iconSize}/>,
+    <DiBackbone size={iconSize}/>,
+    <DiBugsense size={iconSize}/>,
+    <DiCoffeescript size={iconSize}/>,
+    <DiGithubAlt size={iconSize}/>,
+    <DiGo size={iconSize}/>,
+    <DiGulp size={iconSize}/>,
+    <DiEnvato size={iconSize}/>,
+    <DiIonic size={iconSize}/>,
+    <DiGnu size={iconSize}/>,
+    <DiJira size={iconSize}/>,
+    <DiGrunt size={iconSize}/>,
+    <DiIllustrator size={iconSize}/>,
+    <DiJoomla size={iconSize}/>,
+    <DiLaravel size={iconSize}/>,
+    <DiNetbeans size={iconSize}/>,
+    <DiNancy size={iconSize}/>,
+    <DiRedhat size={iconSize}/>,
+    <DiRuby size={iconSize}/>,
+    <DiProlog size={iconSize}/>,
+    <DiPython size={iconSize}/>,
+    <DiRasberryPi size={iconSize}/>,
+    <DiSenchatouch size={iconSize}/>,
+    <DiMsqlServer size={iconSize}/>,
+    <DiMozilla size={iconSize}/>,
+    <DiModernizr size={iconSize}/>,
+    <DiMongodb size={iconSize}/>,
+    <DiDocker size={iconSize}/>,
+    <DiDart size={iconSize}/>,
+    <DiCelluloid size={iconSize}/>,
+    <DiCloud9 size={iconSize}/>,
+    <DiDlang size={iconSize}/>,
+    <DiDigitalOcean size={iconSize}/>,
 ]
 
 export default data
