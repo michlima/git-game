@@ -1,13 +1,21 @@
 import logo from './logo.svg';
-import MemoryGame from './components/memoryGame';
+import TopBar from './components/TopBar/TopBar';
+import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
+import Home from './components/Home/Home';
+import MemoryGame from './components/Games/IconMemory/memoryGame';
 import './App.css';
-import MemoryGame from './components/memoryGame';
 
 function App() {
   return (
-    <div className="App">
-      <MemoryGame/>
-    </div>
+    <Router>
+      <div className="App">
+        <TopBar/>
+        <Routes >
+          <Route path='/' element={<Home/>}/>
+          <Route path='/game-memory' element={<MemoryGame/>}/>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
