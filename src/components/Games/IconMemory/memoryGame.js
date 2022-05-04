@@ -1,11 +1,16 @@
 import React, {useState, useEffect} from 'react'
 import Icon from "react-icons/ai";
 import data from './memoryPics'
-import Frame from './Frame';
+import {Frame, PointFrame} from './Frame';
 
 const MemoryGame = (props) => {
+
+    var W = window.innerWidth;
+    var H = window.innerHeight;
     
     const [pics, setPics] = useState([])
+    const [myPoints, setMyPoints] = useState([])
+    const [versusPoints, setVersusPoints] = useState([])
     const [init, setInit] = useState(true)
     const [choicePair, setChoisePair] = useState(true)
     const [turn, setTurn] = useState(true)
@@ -16,6 +21,7 @@ const MemoryGame = (props) => {
         picId: -1,
         id: -1,
     })
+    
 
     useEffect(() => {
         if(init){
@@ -101,10 +107,11 @@ const MemoryGame = (props) => {
         let picId = picture.picId
         let puzzle = []
         let cl = turn 
-        ? '  bg-blue-400 m-1 p-4 rounded-lg place-content-end border-2 border-cyan-500...' 
-        : '  bg-emerald-400 m-1 p-4  rounded-lg place-content-end border-2 border-green-500...'
+        ? '  bg-cyan-400 m-0 p-4  place-content-end border-2 ...' 
+        : '  bg-emerald-400 m-0 p-4  place-content-end border-2 ...'
 
         if(pick.picId == picId) {
+            let iconID = -1
             for(let i = 0; i < pics.length;i++) {
                 if(pick.picId == pics[i].picId){
                     puzzle.push({
@@ -116,11 +123,14 @@ const MemoryGame = (props) => {
                         hasClass: true,
                         clss: cl
                     })
+                    iconID = i
                 } else {
                     puzzle.push(pics[i])
                 }
-                turn ? setBluePoints(bluePoints + 1) : setGreenPoints(greenPoints + 1)                
             }
+            let icons = turn ? myPoints : versusPoints
+            icons.push(pics[iconID])
+            turn ? setMyPoints(icons) : setVersusPoints(icons)
         } else {
             for(let i = 0; i < pics.length;i++) {
                 if(pics[i].isFound){
@@ -151,12 +161,8 @@ const MemoryGame = (props) => {
 
 
     return(
-        <div class=' flex items-center flex-row justify-center  bg-slate-400 h-screen p-0 ...'>
-            <p class=' text-7xl mr-20 text-sky-700 w-20'>
-                {bluePoints}
-            </p>
-            
-            <div class='inline-grid grid-cols-12 gap-0 mb-10 ...'>
+        <div class=' flex items-center flex-row justify-center  bg-slate-900 h-screen p-0 ...'>
+            <div class='inline-grid grid-cols-12 gap-0 mb-10 mr-10 ...'>
                 {pics.map((e) => {
                     return(
                         <Frame 
@@ -167,10 +173,35 @@ const MemoryGame = (props) => {
                         />
                     )
                 })}
+            </div>     
+            <div class=' flex flex-row  h-96 w-96'>
+                <div class='    flex flex-col w-48'>
+                    <p class=' text-slate-100 subpixel-antialiased'>Player 1</p>
+                    <div class='inline-grid grid-cols-5'>
+                        {myPoints.map(e => {
+                            return(
+                                <PointFrame
+                                    picture={e.picture}
+                                    turn={true}
+                                />
+                            )
+                        })}
+                    </div>
+                </div>
+                <div class='flex flex-col w-48'>
+                    <p class=' text-slate-100 subpixel-antialiased '>Player 2</p>
+                    <div class='inline-grid grid-cols-5 m-0'>
+                        {versusPoints.map(e => {
+                            return(
+                                <PointFrame
+                                    picture={e.picture}
+                                    turn={false}
+                                />
+                            )
+                        })}
+                    </div>
+                </div>
             </div>
-            <p class=' text-7xl ml-20 text-green-700 w-20'>
-                {greenPoints}
-            </p>
         </div>
     )
 }

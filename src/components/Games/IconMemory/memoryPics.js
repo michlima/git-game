@@ -64,7 +64,47 @@ import {
     DiDigitalOcean,
 } from "react-icons/di";
 
- const iconSize = 30
+import { 
+    Gi3DGlasses,
+    Gi3DHammer,
+    Gi3DMeeple,
+    Gi3DStairs,
+    GiAbacus,
+    GiAbbotMeeple,
+    GiAbdominalArmor,
+    GiAbstract001,
+    GiAbstract002,
+    GiAbstract003,
+    GiAbstract004,
+    GiAbstract005,
+    GiAbstract006,
+    GiAbstract007,
+    GiAbstract008,
+    GiAbstract009,
+    GiAbstract010,
+    GiAbstract011,
+    GiAbstract012,
+    GiAbstract013,
+    GiAbstract014,
+    GiAbstract015,
+    GiAbstract016,
+    GiAbstract017,
+    GiAbstract018,
+    GiAbstract019,
+    GiAbstract020,
+    GiAbstract021,
+    GiAbstract022,
+    GiAbstract023,
+    GiAbstract024,
+    GiAbstract025,
+    GiAbstract026,
+    GiAbstract027,
+    GiAbstract028,
+    GiAbstract029,
+} from "react-icons/gi";
+
+const iconSize = 30
+
 let data = [
     <AiFillBug size={iconSize}/>,
     <AiFillAndroid size={iconSize}/>,
@@ -114,6 +154,42 @@ let data = [
     <DiMozilla size={iconSize}/>,
     <DiModernizr size={iconSize}/>,
     <DiMongodb size={iconSize}/>,
+    <DiDocker size={iconSize}/>,
+    <DiDart size={iconSize}/>,
+    <DiCelluloid size={iconSize}/>,
+    <DiCloud9 size={iconSize}/>,
+    <DiDlang size={iconSize}/>,
+    <DiDigitalOcean size={iconSize}/>,
 ]
 
-export default data
+let secondData = [
+    Gi3DGlasses,
+    <Gi3DHammer size={iconSize}/>,
+    <Gi3DMeeple size={iconSize}/>,
+    <Gi3DStairs size={iconSize}/>,
+    <GiAbacus size={iconSize}/>,
+    <GiAbbotMeeple size={iconSize}/>,
+    <GiAbdominalArmor size={iconSize}/>,
+    <GiAbstract001 size={iconSize}/>,
+    <GiAbstract002 size={iconSize}/>,
+    <GiAbstract003 size={iconSize}/>,
+    <GiAbstract004 size={iconSize}/>,
+    <GiAbstract005 size={iconSize}/>,
+    <GiAbstract006 size={iconSize}/>,
+    <GiAbstract007 size={iconSize}/>,
+    <GiAbstract008 size={iconSize}/>,
+    <GiAbstract009 size={iconSize}/>,
+    <GiAbstract010 size={iconSize}/>,
+    <GiAbstract011 size={iconSize}/>,
+    <GiAbstract012 size={iconSize}/>,
+    <GiAbstract013 size={iconSize}/>,
+    <GiAbstract014 size={iconSize}/>,
+    <GiAbstract015 size={iconSize}/>,
+    <GiAbstract016 size={iconSize}/>,
+    <GiAbstract017 size={iconSize}/>,
+    <GiAbstract018 size={iconSize}/>,
+    <GiAbstract019 size={iconSize}/>,
+    <GiAbstract020 size={iconSize}/>,
+]
+
+export default data 
