@@ -5,7 +5,11 @@ const Frame =  (props) => {
         props.reveal(props.picture)
     }
 
-    let styling = ' bg-neutral-100 m-0 p-4 hover:bg-neutral-200 active:bg-neutral-50 place-content-end border-2 ...'
+    let styling = 
+    props.turn 
+    ? ' bg-neutral-100 m-1 p-4 hover:bg-cyan-300 active:bg-neutral-50 place-content-end rounded-md border-2 ...'
+    : ' bg-neutral-100 m-1 p-4 hover:bg-emerald-300 active:bg-neutral-50 place-content-end rounded-md border-2 ...'
+
     return(
         <button 
             onClick={() => reveal()}
@@ -14,17 +18,16 @@ const Frame =  (props) => {
             ? <div>{props.picture.picture}</div>
             : <div class='opacity-0'>{props.picture.picture}</div>
         }
-            
         </button>
     )
 }
 
 const PointFrame =  (props) => {
 
-    let styling = '  m-0 p-4 place-content-end ...'
+    let styling = '  m-1 p-4 place-content-end ...'
     let cl = props.turn 
-        ? '  text-cyan-400 m-1 place-content-end  hover:scale-110 ...' 
-        : '  text-emerald-400 m-1 place-content-end  hover:scale-110 ...'
+        ? '  text-cyan-400 m-0 place-content-end  hover:scale-110 ...' 
+        : '  text-emerald-400 m-0 place-content-end  hover:scale-110 ...'
     return(
         <p 
             class={''}>
