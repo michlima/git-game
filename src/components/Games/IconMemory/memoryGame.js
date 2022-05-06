@@ -25,9 +25,11 @@ const MemoryGame = (props) => {
 
     useEffect(() => {
         if(init){
+            console.log(props.gridCls)
             let puzzle = []
             let puzzleMirror = []
-            for(let i = 0; i < data.length;i++){
+            let size = props.gridSize / 2
+            for(let i = 0; i < size;i++){
                 puzzle.push({
                     picture: data[i],
                     visibility: false,
@@ -63,7 +65,6 @@ const MemoryGame = (props) => {
             id+=1
             len-=1
         }
-        console.log(shuffledPuz)
         return shuffledPuz
     }
 
@@ -107,8 +108,8 @@ const MemoryGame = (props) => {
         let picId = picture.picId
         let puzzle = []
         let cl = turn 
-        ? '  bg-cyan-400 m-0 p-4  place-content-end border-2 ...' 
-        : '  bg-emerald-400 m-0 p-4  place-content-end border-2 ...'
+        ? '  bg-cyan-400 m-1 p-4  place-content-end border-2 ...' 
+        : '  bg-emerald-400 m-1 p-4  place-content-end border-2 ...'
 
         if(pick.picId == picId) {
             let iconID = -1
@@ -162,7 +163,7 @@ const MemoryGame = (props) => {
 
     return(
         <div class=' flex items-center flex-row justify-center  bg-slate-900 h-screen p-0 ...'>
-            <div class='inline-grid grid-cols-12 gap-0 mb-10 mr-10 ...'>
+            <div class={props.gridCls}>
                 {pics.map((e) => {
                     return(
                         <Frame 
