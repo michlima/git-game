@@ -168,7 +168,10 @@ const MemoryGame = (props) => {
             </div>     
             <div class=' flex flex-row  h-96 w-96'>
                 <div class='    flex flex-col w-48'>
-                    <p class=' text-slate-100 subpixel-antialiased'>Player 1</p>
+                    <p class=' text-slate-100 subpixel-antialiased'>
+                        <span class={turn ? "relative inline-flex rounded-full h-3 w-3 bg-cyan-400 animate-pulse mr-2 " : 'relative inline-flex rounded-full h-3 w-3 bg-slate-900 animate-pulse mr-2'}></span>
+                        Player 1
+                    </p>
                     <div class='inline-grid grid-cols-5'>
                         {myPoints.map(e => {
                             return(
@@ -181,7 +184,10 @@ const MemoryGame = (props) => {
                     </div>
                 </div>
                 <div class='flex flex-col w-48'>
-                    <p class=' text-slate-100 subpixel-antialiased '>Player 2</p>
+                    <p class=' text-slate-100 subpixel-antialiased'>
+                    <span class={!turn ? "relative inline-flex rounded-full h-3 w-3 bg-emerald-400 animate-pulse mr-2 " : 'relative inline-flex rounded-full h-3 w-3 bg-slate-900 animate-pulse mr-2'}></span>
+                        Player 2
+                    </p>
                     <div class='inline-grid grid-cols-5 m-0'>
                         {versusPoints.map(e => {
                             return(
