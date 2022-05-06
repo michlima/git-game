@@ -1,12 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import Icon from "react-icons/ai";
 import data from './memoryPics'
 import {Frame, PointFrame} from './Frame';
 
 const MemoryGame = (props) => {
-
-    var W = window.innerWidth;
-    var H = window.innerHeight;
     
     const [pics, setPics] = useState([])
     const [myPoints, setMyPoints] = useState([])
@@ -15,8 +11,6 @@ const MemoryGame = (props) => {
     const [choicePair, setChoisePair] = useState(true)
     const [turn, setTurn] = useState(true)
     const [processing, setProcessing] = useState(false)
-    const [bluePoints, setBluePoints] = useState(0)
-    const [greenPoints, setGreenPoints] = useState(0)
     const [pick, setPick] = useState({
         picId: -1,
         id: -1,
@@ -25,7 +19,6 @@ const MemoryGame = (props) => {
 
     useEffect(() => {
         if(init){
-            console.log(props.gridCls)
             let puzzle = []
             let puzzleMirror = []
             let size = props.gridSize / 2
@@ -49,7 +42,6 @@ const MemoryGame = (props) => {
             }
             puzzle.push(... puzzleMirror)
             let final = shuffle(puzzle)
-            console.log(final)
             setPics(final)
             setInit(false)
         }
@@ -72,7 +64,6 @@ const MemoryGame = (props) => {
         let id = picture.id
         let picId = picture.picId
         let puzzle = []
-        console.log(turn)
         if(pick.id != id && !processing && !picture.isFound){
             setPick({picId,id})
             for(let i = 0; i < pics.length; i++){
